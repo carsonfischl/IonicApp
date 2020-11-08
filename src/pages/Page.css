@@ -1,0 +1,43 @@
+:root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("base2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  font-family: "Courgette", cursive;
+  color: white;
+}
+
+h1 {
+  text-align: right;
+  color: black;
+}
+
+h6 {
+  color: black;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+ion-content {
+  --background: transparent;
+}
+
+ion-card {
+  font-family: "Courgette", cursive;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-button {
+  font-family: "Courgette", cursive;
+  align-items: center;
+}

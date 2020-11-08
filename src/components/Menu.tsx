@@ -12,7 +12,7 @@ import {
 
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { constructOutline, glasses, glassesSharp, heartOutline, heartSharp, barbell, paperPlaneOutline, paperPlaneSharp, barbellSharp, constructSharp, bodySharp, body } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -24,44 +24,42 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/page/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'Carson',
+    url: '/page/Carson S. Fischl',
+    iosIcon: glasses,
+    mdIcon:glassesSharp
   },
   {
-    title: 'Outbox',
-    url: '/page/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: 'About me',
+    url: '/page/About Me',
+    iosIcon: bodySharp,
+    mdIcon: body
   },
   {
-    title: 'Favorites',
-    url: '/page/Favorites',
+    title: 'Projects',
+    url: '/page/Projects',
     iosIcon: heartOutline,
     mdIcon: heartSharp
   },
   {
-    title: 'Archived',
-    url: '/page/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    title: 'Hobbies',
+    url: '/page/Hobbies',
+    iosIcon: barbell,
+    mdIcon: barbellSharp
   },
   {
-    title: 'Trash',
-    url: '/page/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
+    title: 'Work Experience',
+    url: '/page/Work',
+    iosIcon: constructOutline,
+    mdIcon: constructSharp
   },
   {
-    title: 'Spam',
-    url: '/page/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
+    title: 'Contact',
+    url: '/page/Contact',
+    iosIcon: paperPlaneOutline,
+    mdIcon: paperPlaneSharp
   }
 ];
-
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -70,8 +68,8 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonListHeader>Carson S. Fischl</IonListHeader>
+          <IonNote>carson.fischl@hotmail.com</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
@@ -82,16 +80,6 @@ const Menu: React.FC = () => {
               </IonMenuToggle>
             );
           })}
-        </IonList>
-
-        <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
         </IonList>
       </IonContent>
     </IonMenu>
